@@ -224,9 +224,9 @@ def main_menu(screen, clock, ancho, alto):
         pygame.display.flip()
         clock.tick(30)
 
-###############################
+
 #       FUNCIÓN DE SIMULACIÓN
-###############################
+
 def mover_rumba_simulation(
     screen,
     clock,
@@ -469,9 +469,9 @@ def mover_rumba_simulation(
                 nuts.remove(nut)
                 score += 1
 
-        ##############################
+        
         #       DIBUJADO
-        ##############################
+     
         screen.blit(background, (0, 0))
         narr_text = pygame.font.SysFont(None, 28).render(
             "Rumba: Robot de Tony Stark, limpiador de tuercas y cazador de láseres.",
@@ -579,13 +579,13 @@ def mover_rumba_simulation(
         screen.blit(current_sprite, (int(rumba_pos[0]) - offset_x, int(rumba_pos[1]) - offset_y))
 
         # SCOREBOARD
-        # Aquí usamos la primera animación como ícono del scoreboard (podrías usar otra si prefieres)
+        # Aquí usamos la primera animación como ícono del scoreboard 
         scoreboard_nut_frame = all_nut_animations[0][nut_current_frame % len(all_nut_animations[0])]
-        scoreboard_nut_anim = pygame.transform.scale(scoreboard_nut_frame, (16, 16))
+        scoreboard_nut_anim = pygame.transform.scale(scoreboard_nut_frame, (30, 30))
         scoreboard_font = pygame.font.SysFont(None, 24)
         scoreboard_text = scoreboard_font.render(str(score), True, (0, 0, 0))
         scoreboard_x = 800 - 10 - scoreboard_text.get_width()
-        scoreboard_y = 10
+        scoreboard_y = 5
         screen.blit(scoreboard_text, (scoreboard_x, scoreboard_y))
         scoreboard_icon_x = scoreboard_x - scoreboard_nut_anim.get_width() - 5
         scoreboard_icon_y = scoreboard_y
